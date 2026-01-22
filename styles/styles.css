@@ -1,0 +1,252 @@
+/* ===============================
+   Global Reset
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===============================
+   Body Styling
+================================ */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6fb;
+    color: #2c2f36;
+    line-height: 1.7;
+    padding: 30px;
+}
+
+/* ===============================
+   Header Styling
+================================ */
+header {
+    background: #2563eb;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.main-header h1 {
+    font-size: 2.6rem;
+}
+
+.main-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ===============================
+   Navigation Styling
+================================ */
+.main-nav ul,
+.additional-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.main-nav li,
+.additional-nav li {
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 22px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.main-nav li a,
+.additional-nav li a {
+    display: block;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1e3a8a;
+}
+
+.main-nav li:hover,
+.additional-nav li:hover {
+    background-color: #c7d2fe;
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   Sections Styling
+================================ */
+.section {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border-left: 5px solid #2563eb; /* original blue line */
+}
+
+.section h2 {
+    font-size: 1.6rem;
+    color: #2563eb;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.section h3 {
+    color: #1e3a8a;
+    margin: 12px 0;
+    background-color: #e0e7ff;
+    padding: 6px 10px;
+    font-weight: normal;
+}
+
+/* ===============================
+   Images Styling
+================================ */
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-right: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+img {
+    border-radius: 10px;
+    border: 3px solid;
+}
+
+.myclicks img { border-color: green; }
+.hobby-images img { border-color: purple; }
+.company-logos img { border-color: orange; }
+
+.myclicks {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.myclicks img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.company-logos {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.company-logos img {
+    width: 150px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.company-logos img:hover {
+    transform: scale(1.1);
+}
+
+.job-logo {
+    width: 120px;
+    border-radius: 5px;
+}
+
+.hobby-images {
+    display: flex;
+    gap: 50px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.hobby-images img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* ===============================
+   Lists Styling
+================================ */
+ul {
+    list-style-type: lower-alpha;
+    padding-left: 50px; /* increased for first-line indent */
+    color: #5c4a63;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 50px;
+    color: #5c4a63;
+    font-family: 'Georgia', serif;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Remove left border for specific sections */
+.section.no-border {
+    border-left: none;  /* removes the blue line */
+}
+
+/* ===============================
+   Paragraphs Styling
+   First-line indent, no red line
+================================ */
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;       /* spacing between lines */
+    margin-bottom: 20px;
+    text-indent: 30px;       /* first-line indent */
+    display: block;          /* ensures text-indent works */
+    position: static;        /* remove relative positioning from old ::before */
+}
+
+/* Remove red line completely */
+p::before {
+    content: none;           /* disables the previous red line */
+}
+
+/* Paragraphs inside list items */
+li p {
+    text-indent: 30px; /* first-line indent for p inside li */
+}
+
+/* ===============================
+   Contact Icons
+================================ */
+.icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* ===============================
+   Vertical Line Wrapper for Hobbies + Interests
+================================ */
+.section-wrapper {
+    border-left: 5px solid #2563eb; /* connected vertical line */
+    padding-left: 20px; /* space from line */
+}
+
+/* Remove individual section border inside wrapper */
+.section-wrapper .section {
+    border-left: none; /* prevents duplicate line */
+    margin-bottom: 30px; /* spacing between sections inside wrapper */
+}
+
+.section-wrapper .section.no-border {
+    border-left: none; /* extra safety */
+}
