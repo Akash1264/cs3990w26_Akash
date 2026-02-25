@@ -1,0 +1,274 @@
+/* ── CSS Variables ── */
+:root {
+  --hero-h: clamp(260px, 65vh, 520px);
+  --accent: #f5a623;
+  --accent-hover-bg: #2d1a6e;
+  --accent-hover-text: #f5a623;
+  --navy: #0d1b3e;
+  --card-radius: 0 0 8px 8px;
+  --img-radius: 12px 12px 0 0;
+  --gap: clamp(12px, 2vw, 28px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  font-weight: 300;
+  background: #f0f2f6;
+  color: #1a1a2e;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr;
+}
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+#hero {
+  position: relative;
+  width: 100%;
+  height:auto;
+  min-height: var(--hero-h);
+  overflow: hidden;
+  background: var(--navy);
+}
+
+#hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../images/hacker.jpeg") center / cover no-repeat;
+  filter: brightness(0.55);
+}
+/* two-column hero layout */
+#hero .hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  height: 100%;
+  align-items: center;
+  padding: clamp(20px, 4vw, 30px) clamp(10px, 3vw, 20px);
+  gap: 20px;
+}
+
+#hero h1 {
+  font-family: Arial, sans-serif;
+  font-size: clamp(1.6rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  color: #cc88ff;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-right p {
+  color: #e8e8ff;
+  font-size: clamp(0.8rem, 1.5vw, 1.05rem);
+  line-height: 1.55;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* ── CTA button (hero) ── */
+.btn-hero {
+  display: inline-block;
+  padding: 16px 36px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 12px;
+  width: fit-content;
+  transition: background 0.25s, color 0.25s;
+}
+
+.btn-hero:hover {
+  background: rgba(245, 166, 35, 0.65);  /* transparent yellow */
+  color: #3a2a00;
+}
+
+/* ══════════════════════════════
+   PROGRAMS SECTION
+══════════════════════════════ */
+#programs {
+  padding: clamp(28px, 4vw, 60px) clamp(16px, 4vw, 60px);
+  background: #f0f2f6;
+}
+
+/* Responsive grid — no @media needed */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Card image with label overlay ── */
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--img-radius);  /* top-left & top-right rounded */
+}
+
+.card-img-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 50px 100px;
+  background: rgba(0, 0, 0, 0.65);   /* transparent black bar */
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(1.3rem, 1.2vw, 1.05rem);
+  font-weight: 700;
+  display: flex; 
+  justify-content: flex-start;
+  backdrop-filter: blur(2px);        /* subtle premium glass effect */
+}
+
+/* ── Card body ── */
+.card-body {
+  padding: clamp(14px, 2vw, 22px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+  line-height: 1.65;
+  text-align: justify;
+  color: #333;
+}
+
+/* ── Visit button ── */
+.btn-visit {
+  display: inline-block;
+  padding: 9px 18px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  width: fit-content;
+  margin-top: auto;
+  transition: background 0.25s, color 0.25s;
+}
+
+.btn-visit:hover {
+  background: rgba(245, 166, 35, 0.65);  /* transparent yellow */
+  color:#808080 ;
+}
+
+/* ══════════════════════════════
+Image Gallery
+══════════════════════════════ */
+#gallery {
+  padding: clamp(8px, 1.5vw, 18px) clamp(16px, 4vw, 60px);
+  background: #f0f2f6;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.gallery-item-img {
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-item img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.course-title {
+  color: black;
+  font-size: 0.9rem;
+  margin-top: 14px;
+  padding: 0 4px;
+}
+
+.course-meta {
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.85rem;
+  color: black;
+  margin-top: 4px;
+}
+
+.gallery-item:hover .course-meta {
+  opacity: 1;
+}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer {
+  background: var(--navy);
+  color: #aab;
+
+  display: flex;
+  justify-content: space-between;   /*  pushes items apart */
+  align-items: center;
+
+  padding: 14px clamp(12px, 3vw, 32px);
+  font-size: 0.8rem;
+}
+footer .heart {
+ color: #e25555;
+}
+
+/* ══════════════════════════════
+   ANIMATIONS
+══════════════════════════════ */
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
