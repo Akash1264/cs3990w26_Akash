@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9d9d9;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+    max-width: 900px;
+    margin: 10px auto;
+    background-color: #f2eded;
+    padding: 4px;
+}
+
+.link1,
+.link2,
+.link3,
+.link4 {
+    background-color: #c96f6f;
+    color: #5d0000;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 0;
+    border: 1px solid #7d0000;
+}
+
+.link1 { grid-column: 1 / 2; grid-row: 1; }
+.link2 { grid-column: 2 / 3; grid-row: 1; }
+.link3 { grid-column: 5 / 6; grid-row: 1; }
+.link4 { grid-column: 6 / 7; grid-row: 1; }
+
+.link1:hover,
+.link2:hover,
+.link3:hover,
+.link4:hover {
+    background-color: #990000;
+    color: white;
+}
+
+.lorem-box {
+    grid-column: 3 / 5;
+    grid-row: 1 / 4;
+    background-color: #9bdc52;
+    color: #fff6bf;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    line-height: 1.25;
+    border: 1px solid #ffffff;
+}
+
+.img1, .img2, .img3, .img4,
+.img5, .img6, .img7, .img8 {
+    background-color: #c97b7b;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #7d0000;
+     border-radius: 15px;
+}
+
+.img1 { grid-column: 1 / 2; grid-row: 2; }
+.img2 { grid-column: 2 / 3; grid-row: 2; }
+.img3 { grid-column: 5 / 6; grid-row: 2; }
+.img4 { grid-column: 6 / 7; grid-row: 2; }
+
+.img5 { grid-column: 1 / 2; grid-row: 3; }
+.img6 { grid-column: 2 / 3; grid-row: 3; }
+.img7 { grid-column: 5 / 6; grid-row: 3; }
+.img8 { grid-column: 6 / 7; grid-row: 3; }
+
+.img1 img, .img2 img, .img3 img, .img4 img,
+.img5 img, .img6 img, .img7 img, .img8 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 3px solid transparent;
+     border-radius: 15px;
+}
+
+.img1 img:hover, .img2 img:hover, .img3 img:hover, .img4 img:hover,
+.img5 img:hover, .img6 img:hover, .img7 img:hover, .img8 img:hover {
+    border: 3px solid white;
+}
+
+.footer {
+    grid-column: 1 / 7;
+    grid-row: 4;
+    background-color: #9b7d6d;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.footer-extra {
+    display: none;
+    color: #ffd700;
+    font-style: italic;
+}
+
+.footer:hover .footer-extra {
+    display: inline;
+}
+#category1:target,
+#category2:target {
+    outline: 5px solid yellow;
+}
