@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.35;
+  z-index: -1;
+}
+
+h1 {
+  background: #8e24aa;
+  color: white;
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+}
+
+#start-btn {
+  background-color: #4a148c;
+  background-image: linear-gradient(135deg, #3a0f6e, #6a1b9a, #2d0a4e);
+  border: none;
+  padding: 10px 25px;
+  margin: 15px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+#start-btn span {
+  background: linear-gradient(90deg, #ff6f00, #e91e63, #ce93d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+#start-btn:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+#score-section {
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#score-section > span:first-child {
+  display: block;
+  margin-bottom: 5px;
+  background: linear-gradient(90deg, #ff6f00, #e91e63, #8e24aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+#stars {
+  display: block;
+}
+
+.star-icon {
+  color: #8e24aa;
+}
+
+#big-message {
+  display: none;
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6f00, #e91e63, #8e24aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+#timer-section {
+  padding: 5px 20px;
+  text-align: center;
+}
+
+#timer-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #ff6f00, #e91e63, #8e24aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+#message-box {
+  display: none;
+  margin-left: 6px;
+  padding: 1px 5px;
+  color: white;
+  font-weight: normal;
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+#message-box.success { background: #4a148c; }
+#message-box.error { background: #6a1b9a; }
+#message-box.info { background: #7b1fa2; }
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 15px;
+  margin: 10px 20px;
+  background: linear-gradient(135deg, #ce93d8, #ab47bc, #d1a3d9);
+}
+
+.tile {
+  height: 250px;
+  cursor: pointer;
+  position: relative;
+  perspective: 600px;
+  overflow: hidden;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  background: #37474f;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background: #7b1fa2;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.card-back > div {
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.tile.flipped .card-front { transform: rotateY(180deg); }
+.tile.flipped .card-back { transform: rotateY(0deg); }
+
+.tile.done .card-front { background: #9e7aa0; }
+
+.done-text {
+  color: rgba(255,255,255,0.5);
+  font-weight: bold;
+}
+
+.card-question {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.card-options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.card-option {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.check-btn {
+  background: #c2185b;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.asset-icon {
+  font-size: 2rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.asset-desc {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#game-over {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6a1b9a;
+  padding: 30px;
+  margin: 10px 20px;
+  background: linear-gradient(135deg, #ce93d8, #ab47bc, #d1a3d9);
+}
+
+@media (max-width: 768px) {
+  #game-board { grid-template-columns: repeat(2, 1fr); }
+}
