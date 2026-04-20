@@ -1,0 +1,55 @@
+    #app {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+   #courses {
+    list-style: none;
+    margin: 0 0 15px 0;
+    padding: 6px;              /* small inner spacing */
+    display: flex;
+    gap: 6px;
+
+    background-color: #0fa36b; /* ✅ FULL green bar */
+    border-radius: 2px;
+}
+    
+    #courses li {
+        margin: 0;
+        background-color: #83d6d6;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+    
+    #courses li.active {
+        color: #6db0cc;
+        background-color: #192d1c;
+        box-shadow: 5px 5px 15px 5px #000000;
+    }
+    
+    #courses li:hover {
+        background-color: #1e3829;
+        transform: translateY(-2px);
+    }
+    
+    #coursesDesc {
+        background-color: #a0f2f4;
+    }
+    
+    #coursesDesc,
+    #coursesPrereqs {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    #coursesPrereqs ul {
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
+
+    
